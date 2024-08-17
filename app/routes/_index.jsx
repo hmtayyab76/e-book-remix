@@ -1,7 +1,7 @@
-import type { MetaFunction } from "@remix-run/node";
+
 import Book from "./book";
 
-export const meta: MetaFunction = () => {
+export const meta = () => {
   return [
     { title: "E-Book App" },
     { name: "description", content: "Welcome to Remix!" },

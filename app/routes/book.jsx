@@ -1,6 +1,6 @@
 // Book.tsx
-import React from 'react';
-import MultiPageBook from '~/components/MultiPageBook';
+
+import MultiPageBook from '../components/MultiPageBook';
 
 const pages = [
     [
@@ -20,7 +20,7 @@ const pages = [
     ],
 ];
 
-const Book: React.FC = () => {
+const Book = () => {
     return (
         <div className="">
         <MultiPageBook pages={pages} />

@@ -1,16 +1,7 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
+import PropTypes from 'prop-types';
 
-// Define the types for props
-interface Page {
-    title: string;
-    description: string;
-}
-
-interface MultiPageBookProps {
-    pages: Page[][];
-}
-
-const MultiPageBook: React.FC<MultiPageBookProps> = ({ pages }) => {
+const MultiPageBook = ({ pages }) => {
     const [currentPage, setCurrentPage] = useState(0);
 
     const handleNext = () => {
@@ -71,6 +62,17 @@ const MultiPageBook: React.FC<MultiPageBookProps> = ({ pages }) => {
             </div>
         </div>
     );
+};
+
+MultiPageBook.propTypes = {
+    pages: PropTypes.arrayOf(
+        PropTypes.arrayOf(
+            PropTypes.shape({
+                title: PropTypes.string.isRequired,
+                description: PropTypes.string.isRequired,
+            })
+        )
+    ).isRequired,
 };
 
 export default MultiPageBook;
